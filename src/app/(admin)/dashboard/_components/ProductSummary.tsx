@@ -4,7 +4,7 @@ import SummaryCardsItem from './common/SummaryCardsItem'
 const ProductSummary = () => {
   return (
     <div className="bg-white w-1/3 px-4 py-6 rounded-lg space-y-2 h-full shadow-md ">
-      <h3 className="capitalize h-8 flex items-center text-xl font-semibold">
+      <h3 className="capitalize h-8 flex items-center text-xl font-semibold text-gray-600">
         Product Summary
       </h3>
 

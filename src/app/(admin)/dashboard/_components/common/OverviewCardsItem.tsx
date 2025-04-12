@@ -15,7 +15,7 @@ const OverviewCardsItem: React.FC<OverviewCardsItemProps> = ({
   return (
     <div className="h-20 min-w-36 p-2 ">
       <div className="flex items-center justify-center  h-2/3">
-        <div className="size-6 ">
+        <div className="size-6">
           <Image
             src={srcIcon}
             alt="Logo"

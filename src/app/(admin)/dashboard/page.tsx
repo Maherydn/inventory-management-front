@@ -7,6 +7,7 @@ import ProductSummary from "./_components/ProductSummary";
 import BarChart from "./_components/chart/BarChart";
 import LineChart from "./_components/chart/LineChart";
 import SellingStock from "./_components/sellingstock/SellingStock";
+import LowQualityStoc from "./_components/lowQaulityStock/LowQualityStoc";
 
 const Page = () => {
   return (
@@ -36,7 +37,7 @@ const Page = () => {
           <SellingStock />
         </div>
         <div className="flex flex-col w-1/3 bg-white rounded-lg shadow-md overflow-hidden">
-          <SellingStock />
+          <LowQualityStoc />
         </div>
       </div>
     </section>

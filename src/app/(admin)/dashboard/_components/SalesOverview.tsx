@@ -5,7 +5,7 @@ import OverviewCardsItem from "./common/OverviewCardsItem";
 const SalesOverview = () => {
   return (
     <div className="bg-white w-2/3 p-4 rounded-lg space-y-6 h-full shadow-md ">
-      <h3 className="capitalize h-10 flex items-center text-xl font-semibold">
+      <h3 className="capitalize h-10 flex items-center text-xl font-semibold  text-gray-600">
         Sales Overview
       </h3>
       <div className="w-full flex justify-between items-center">
