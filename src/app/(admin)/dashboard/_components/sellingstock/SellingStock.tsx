@@ -3,7 +3,7 @@ import SellingStockTable from "./SellingStockTable";
 
 const SellingStock = () => {
   return (
-    <>
+    <div className="flex flex-col w-2/3 bg-white rounded-lg shadow-md overflow-hidden">
       <div className="flex items-center justify-between h-20 px-6">
         <h4 className="capitalize text-xl font-semibold text-gray-600">
           Top Selling Stock
@@ -13,9 +13,9 @@ const SellingStock = () => {
         </button>
       </div>
       <div className="w-full">
-        <SellingStockTable/>
+        <SellingStockTable />
       </div>
-    </>
+    </div>
   );
 };
 

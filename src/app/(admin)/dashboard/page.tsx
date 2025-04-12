@@ -33,12 +33,8 @@ const Page = () => {
       </div>
 
       <div className="flex gap-4 px-6">
-        <div className="flex flex-col w-2/3 bg-white rounded-lg shadow-md overflow-hidden">
-          <SellingStock />
-        </div>
-        <div className="flex flex-col w-1/3 bg-white rounded-lg shadow-md overflow-hidden">
-          <LowQualityStoc />
-        </div>
+        <SellingStock />
+        <LowQualityStoc />
       </div>
     </section>
   );

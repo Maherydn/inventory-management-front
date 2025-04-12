@@ -3,7 +3,7 @@ import OverallInventoryItem from "./OverallInventoryItem";
 
 const OverallInventory = () => {
   return (
-    <>
+    <div className="bg-white rounded-xl p-2 space-y-4 shadow-md">
       <h3 className="capitalize h-18 flex items-center text-xl font-semibold text-gray-600 p-4">
         Overall Inventory
       </h3>
@@ -43,7 +43,7 @@ const OverallInventory = () => {
           isLowStock
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import LowQualityStockTable from "./LowQualityStockTable";
 
 const LowQualityStoc = () => {
   return (
-    <>
+    <div className="flex flex-col w-1/3 bg-white rounded-lg shadow-md overflow-hidden">
       <div className="flex items-center justify-between h-20 px-6">
         <h4 className="capitalize text-xl font-semibold text-gray-600">
           Low Quantity Stock
@@ -12,8 +12,8 @@ const LowQualityStoc = () => {
           see all
         </button>
       </div>
-      <LowQualityStockTable/>
-    </>
+      <LowQualityStockTable />
+    </div>
   );
 };
 
