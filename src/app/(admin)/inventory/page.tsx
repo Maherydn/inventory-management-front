@@ -1,7 +1,6 @@
-import Link from "next/link";
 import React from "react";
-import OverallInventory from "./components/overallInventory/OverallInventory";
-import Products from "./components/products/Products";
+import OverallInventory from "./_components/overallInventory/OverallInventory";
+import Products from "./_components/products/Products";
 
 const page = () => {
   return (

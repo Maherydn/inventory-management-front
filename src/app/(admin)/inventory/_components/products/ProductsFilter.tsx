@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterIcon } from "../../assets/icon";
+import { FilterIcon } from "../../_assets/icon";
 
 const ProductsFilter = () => {
   return (
