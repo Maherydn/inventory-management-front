@@ -3,11 +3,11 @@ import OverviewItem from "./OverviewItem";
 
 const Overview = () => {
   return (
-    <div className="bg-white w-2/3 p-4 rounded-lg space-y-6 h-full shadow-md ">
+    <div className="bg-white w-3/5 p-4 rounded-lg space-y-8 h-full shadow-md ">
       <h3 className="capitalize h-10 flex items-center text-xl font-semibold  text-gray-600">
         Overview
       </h3>
-      <div className="w-full space-y-4">
+      <div className="w-full space-y-6">
         <div className="w-full flex justify-between pl-6 pr-16 items-center  ">
           <OverviewItem
             value={"21,190"}

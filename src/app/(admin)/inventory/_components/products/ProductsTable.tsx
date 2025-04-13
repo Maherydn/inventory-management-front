@@ -77,13 +77,13 @@ const ProductsTable: React.FC = () => {
       </thead>
       <tbody className="text-gray-500">
         {data.map((product, index) => (
-          <tr key={index} className="hover:bg-gray-50 h-14">
-            <td className="px-4 py-3 border-t font-semibold">{product.name}</td>
-            <td className="px-4 py-3 border-t">₹ {product.buyPrice}</td>
-            <td className="px-4 py-3 border-t">{product.quantity}</td>
-            <td className="px-4 py-3 border-t">{product.threshold}</td>
-            <td className="px-4 py-3 border-t">{product.expiryDate}</td>
-            <td className="px-4 py-3 border-t">
+          <tr key={index} className="hover:bg-gray-50 h-14 border-t ">
+            <td className="px-4 py-3 font-semibold">{product.name}</td>
+            <td className="px-4 py-3 ">₹ {product.buyPrice}</td>
+            <td className="px-4 py-3 ">{product.quantity}</td>
+            <td className="px-4 py-3 ">{product.threshold}</td>
+            <td className="px-4 py-3 ">{product.expiryDate}</td>
+            <td className="px-4 py-3 ">
               <span
                 className={`px-2 py-1 rounded-full text-xs font-semibold ${
                   product.available ? " text-green-500" : " text-red-500"

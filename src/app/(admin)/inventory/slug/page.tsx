@@ -4,7 +4,7 @@ import ItemDetail from "./_components/Detail";
 
 const page = () => {
   return (
-    <section className="h-full w-full flex flex-col p-4 gap-6 overflow-y-auto">
+    <section className="h-full min-w-6xl flex flex-col p-4 gap-6 xl:overflow-y-auto">
       <div className="bg-white rounded-xl p-2 space-y-4 shadow-md">
         <div className="w-full">
           <ItemHeader />

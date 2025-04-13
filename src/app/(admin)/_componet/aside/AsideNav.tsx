@@ -20,7 +20,7 @@ const AsideNav = () => {
   const navItems = [
     { label: "dashboard", icon: <DashboardIcon />, path: "/dashboard" },
     { label: "inventory", icon: <InvetoryIcon />, path: "/inventory" },
-    { label: "reports", icon: <ReportsIcon />, path: "/report" },
+    { label: "reports", icon: <ReportsIcon />, path: "/reports" },
     { label: "suppliers", icon: <SuppliersIcon />, path: "/suppliers" },
     { label: "orders", icon: <OrdersIcon />, path: "/orders" },
     { label: "manage store", icon: <ManageStoreIcon />, path: "/manage-store" },
