@@ -43,15 +43,6 @@ export const options = {
         padding: 20,
       },
     },
-    title: {
-      display: true,
-      text: "Order Summary",
-      weight: "bold",
-      font: {
-        size: 20,
-        family: "'Segoe UI', sans-serif",
-      },
-    },
   },
 };
 
@@ -93,7 +84,7 @@ export const data = {
 };
 
 // Composant du graphique
-const LineChart = () => {
+const ReportsLineChart = () => {
   return (
     <div className="w-full h-full">
       <Line options={options} data={data} />
@@ -101,4 +92,4 @@ const LineChart = () => {
   );
 };
 
-export default LineChart;
+export default ReportsLineChart;

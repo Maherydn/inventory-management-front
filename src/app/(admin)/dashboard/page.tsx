@@ -24,10 +24,10 @@ const Page = () => {
       </div>
 
       <div className="flex gap-4 p-6 h-96">
-        <div className="bg-white w-1/2 p-4 rounded-lg space-y-6 h-full shadow-md">
+        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md">
           <BarChart />
         </div>
-        <div className="bg-white w-1/2 p-4 rounded-lg space-y-6 h-full shadow-md">
+        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md">
           <LineChart />
         </div>
       </div>
