@@ -6,7 +6,7 @@ const AsideHeader = () => {
       {/* <div className="size-10">
         <img src="/image/Logo.png" alt="" />
       </div> */}
-      <h2 className="uppercase font-bold text-xl text-gray-500">
+      <h2 className="uppercase font-bold text-xl text-gray-500 text-nowrap">
         {"< Toto />"}
       </h2>
     </div>

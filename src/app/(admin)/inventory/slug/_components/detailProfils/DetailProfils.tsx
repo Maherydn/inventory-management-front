@@ -1,11 +1,12 @@
 import React from "react";
 import DetailProfilsItem from "./DetailProfilsItem";
+import Image from "next/image";
 
 const DetailProfils = () => {
   return (
     <>
       <div className="w-32 h-32 border border-gray-300 rounded-lg overflow-hidden">
-        <img
+        <Image
           src="#"
           alt="Product image"
           className="object-cover w-full h-full"

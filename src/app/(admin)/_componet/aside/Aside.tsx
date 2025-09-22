@@ -5,7 +5,7 @@ import AsideActions from "./AsideActions";
 
 const Aside = () => {
   return (
-    <aside className="h-screen flex flex-col justify-between bg-white w-52 p-6 shadow-md">
+    <aside className="h-screen flex flex-col justify-between bg-white hover:w-52 w-14 p-6 shadow-md overflow-hidden duration-300 z-50">
       <div className=" space-y-6">
         <AsideHeader />
         <div>

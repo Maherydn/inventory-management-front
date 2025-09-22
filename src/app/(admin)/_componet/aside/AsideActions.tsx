@@ -1,12 +1,12 @@
 'use client';
 
 import React from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import AsideNavItem from "./AsideNavItem";
 import { LogoutIcon, SettingsIcon } from "@/app/_assets/icon";
 
 const AsideActions = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleLogout = () => {
     console.log("logout");

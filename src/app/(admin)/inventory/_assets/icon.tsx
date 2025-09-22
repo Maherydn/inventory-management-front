@@ -11,9 +11,9 @@ export const FilterIcon: React.FC = () => (
     <path
       d="M4 6H14M1.5 1H16.5M6.5 11H11.5"
       stroke="#5D6679"
-      stroke-width="1.67"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

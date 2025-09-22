@@ -23,11 +23,11 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="flex gap-4 p-6 h-96">
-        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md">
+      <div className="flex gap-4 p-6 h-96 ">
+        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md flex items-center justify-center">
           <BarChart />
         </div>
-        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md">
+        <div className="bg-white w-1/2 p-4 rounded-lg  h-full shadow-md flex items-center justify-center">
           <LineChart />
         </div>
       </div>

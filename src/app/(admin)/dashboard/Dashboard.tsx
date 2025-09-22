@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import SalesOverview from "./_components/SalesOverview";
 import InventorySummary from "./_components/InventorySummary";

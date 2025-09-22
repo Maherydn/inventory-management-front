@@ -95,7 +95,7 @@ export const data = {
 // Composant du graphique
 const LineChart = () => {
   return (
-    <div className="w-full h-full">
+    <div className=" h-full w-[calc(45vw-125px)] ">
       <Line options={options} data={data} />
     </div>
   );

@@ -86,8 +86,8 @@ export const data = {
 // Composant du graphique
 const ReportsLineChart = () => {
   return (
-    <div className="w-full h-full">
-      <Line options={options} data={data} />
+    <div className="h-full min-w-0 w-[calc(95vw-250px)]">
+      <Line options={options} data={data} width={80} height={100} />
     </div>
   );
 };

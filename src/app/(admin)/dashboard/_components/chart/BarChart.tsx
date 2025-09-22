@@ -12,7 +12,6 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
-import { Weight } from "lucide-react";
 
 // Enregistrement des composants nécessaires à ChartJS
 ChartJS.register(
@@ -82,7 +81,7 @@ export const data = {
 // Composant du graphique
 const BarChart = () => {
   return (
-    <div className="w-full h-full">
+    <div className=" h-full w-[calc(45vw-125px)] ">
       <Bar options={options} data={data} />
     </div>
   );

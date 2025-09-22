@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface LowQualityStockItemProps {
@@ -16,7 +17,7 @@ const LowQualityStockItem: React.FC<LowQualityStockItemProps> = ({
   return (
     <div className="flex w-full items-end justify-around gap-1 h-16 border-t border-gray-100 p-2 hover:bg-gray-100 duration-300">
       <div className="h-full">
-        <img src={image} alt="photo" className="h-full" />
+        <Image src={image} alt="photo" className="h-full" width={100} height={100}/>
       </div>
       <div className="flex flex-col items-start justify-end gap-px h-full">
         <h4 className="capitalize text-md font-semibold text-gray-600">

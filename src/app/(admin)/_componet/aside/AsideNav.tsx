@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React from "react";
 import { usePathname, useRouter } from "next/navigation"; 
 import AsideNavItem from "./AsideNavItem";
 import {
@@ -27,7 +27,7 @@ const AsideNav = () => {
   ];
 
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-4 text-nowrap">
       {navItems.map((item) => (
         <AsideNavItem
           key={item.label}

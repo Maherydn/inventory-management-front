@@ -1,5 +1,4 @@
 import React from "react";
-import { FilterIcon } from "../../_assets/icon";
 import ReportsLineChart from "../chart/ReportsLineChart";
 import ProfitRevenuFilter from "./ProfitRevenuFilter";
 

@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <main className="h-screen w-screen flex overflow-hidden ">
       <Aside />
-      <div className="w-full h-full flex flex-col gap-px   ">
+      <div className=" h-full flex-1 flex flex-col gap-px   ">
         <Header />
         {/* <div className="h-14 w-f  ull bg-white"></div> */}
         <div className="h-full w-full overflow-auto"> {children}</div>
