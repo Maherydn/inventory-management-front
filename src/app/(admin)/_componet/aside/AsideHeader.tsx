@@ -1,4 +1,6 @@
 import React from "react";
+import { ShoppingBag } from "lucide-react";
+
 
 const AsideHeader = () => {
   return (
@@ -7,7 +9,7 @@ const AsideHeader = () => {
         <img src="/image/Logo.png" alt="" />
       </div> */}
       <h2 className="uppercase font-bold text-xl text-gray-500 text-nowrap">
-        {"< Toto />"}
+        <ShoppingBag/>
       </h2>
     </div>
   );

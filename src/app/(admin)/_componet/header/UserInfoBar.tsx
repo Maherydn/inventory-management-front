@@ -1,4 +1,5 @@
 import { NotificationIcon } from "@/app/_assets/icon";
+import { User } from "lucide-react";
 import React from "react";
 
 const UserInfoBar = () => {
@@ -7,8 +8,9 @@ const UserInfoBar = () => {
       <div className="size-4 text-gray-500">
         <NotificationIcon />
       </div>
-      <div className="size-7 rounded-full bg-gray-500">
+      <div className="size-7 rounded-full ">
         {/* <img src="" alt="" /> */}
+        <User className="size-full text-black/70"/>
       </div>
     </div>
   );

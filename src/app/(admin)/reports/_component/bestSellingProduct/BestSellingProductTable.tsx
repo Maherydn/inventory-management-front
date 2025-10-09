@@ -1,45 +1,30 @@
-import React from "react";
+"use client";
 
-const BestSellingProductTable = () => {
+import React, { useEffect, useState } from "react";
+import { bestSellingProductData, BestSellingProductType } from "../../data";
+
+
+
+const BestSellingProductTable: React.FC = () => {
+  const [data, setData] = useState<BestSellingProductType[]>([]);
   const headers = [
     "Product",
     "Product Ref",
     "Category",
     "Remaining Quantity",
-    "Turn Over",
+    "Turnover",
     "Increase By",
   ];
 
-  const data = [
-    {
-      name: "Tomatoes",
-      ref: "VEG-001",
-      category: "Vegetable",
-      quantity: 120,
-      turnover: "₹26,000",
-      increase: "3.2%",
-    },
-    {
-      name: "Bananas",
-      ref: "FRU-002",
-      category: "Fruits",
-      quantity: 75,
-      turnover: "₹18,500",
-      increase: "2.1%",
-    },
-    {
-      name: "Milk",
-      ref: "DAI-003",
-      category: "Dairy",
-      quantity: 50,
-      turnover: "₹12,300",
-      increase: "-1.5%",
-    },
-  ];
+  useEffect(() => {
+    setData(bestSellingProductData);
+  }, []);
+
+  if (!data.length) return <p>Loading...</p>;
 
   return (
     <table className="table-auto w-full">
-      <thead className="bg-gray-50 text-gray-600 uppercase text-sm">
+      <thead className="bg-gray-100 text-gray-600 uppercase text-sm">
         <tr>
           {headers.map((header, index) => (
             <th key={index} className="px-4 py-3 text-left capitalize">
@@ -58,8 +43,14 @@ const BestSellingProductTable = () => {
             <td className="px-4 py-3">{item.ref}</td>
             <td className="px-4 py-3">{item.category}</td>
             <td className="px-4 py-3">{item.quantity}</td>
-            <td className="px-4 py-3">{item.turnover}</td>
-            <td className="px-4 py-3 text-green-500">{item.increase}</td>
+            <td className="px-4 py-3">₹ {item.turnover.toLocaleString()}</td>
+            <td
+              className={`px-4 py-3 ${
+                item.increase < 0 ? "text-red-500" : "text-green-500"
+              }`}
+            >
+              {item.increase.toFixed(1)}%
+            </td>
           </tr>
         ))}
       </tbody>

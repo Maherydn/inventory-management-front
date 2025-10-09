@@ -1,6 +1,12 @@
 import React from "react";
 
-const DetailSupplier = () => {
+// Définition du type des props
+type DetailSupplierProps = {
+  productName: string;
+  clientCode: string;
+};
+
+const DetailSupplier: React.FC<DetailSupplierProps> = ({ productName, clientCode }) => {
   return (
     <div className="space-y-4 w-full">
       <h3 className="text-lg text-gray-700 font-semibold border-b pb-1">
@@ -10,13 +16,15 @@ const DetailSupplier = () => {
       <div className="flex justify-between w-full text-sm text-gray-600">
         <span className="w-1/2">Product name</span>
         <span className="w-1/2 text-right font-medium text-gray-600">
-          Maggi
+          {productName}
         </span>
       </div>
 
       <div className="flex justify-between w-full text-sm text-gray-600">
         <span className="w-1/2">Client code</span>
-        <span className="w-1/2 text-right font-medium text-gray-600">4618</span>
+        <span className="w-1/2 text-right font-medium text-gray-600">
+          {clientCode}
+        </span>
       </div>
     </div>
   );

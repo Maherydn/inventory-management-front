@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { usePathname, useRouter } from "next/navigation"; 
+import { usePathname, useRouter } from "next/navigation";
 import AsideNavItem from "./AsideNavItem";
 import {
   DashboardIcon,
@@ -12,32 +12,34 @@ import {
   SuppliersIcon,
 } from "@/app/_assets/icon";
 
-const AsideNav = () => {
-  const router = useRouter();
-  const pathNameCurrent = usePathname();
-  
+interface NavItem {
+  label: string;
+  icon: React.ReactNode;
+  path: string;
+}
 
-  const navItems = [
-    { label: "dashboard", icon: <DashboardIcon />, path: "/dashboard" },
-    { label: "inventory", icon: <InvetoryIcon />, path: "/inventory" },
-    { label: "reports", icon: <ReportsIcon />, path: "/reports" },
-    { label: "suppliers", icon: <SuppliersIcon />, path: "/suppliers" },
-    { label: "orders", icon: <OrdersIcon />, path: "/orders" },
-    { label: "manage store", icon: <ManageStoreIcon />, path: "/manage-store" },
+const AsideNav: React.FC = () => {
+  const router = useRouter();
+  const currentPath = usePathname();
+
+  const navItems: NavItem[] = [
+    { label: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
+    { label: "Inventory", icon: <InvetoryIcon />, path: "/inventory" },
+    { label: "Reports", icon: <ReportsIcon />, path: "/reports" },
+    { label: "Suppliers", icon: <SuppliersIcon />, path: "/suppliers" },
+    { label: "Orders", icon: <OrdersIcon />, path: "/orders" },
+    { label: "Manage Store", icon: <ManageStoreIcon />, path: "/manage-store" },
   ];
 
   return (
-    <ul className="space-y-4 text-nowrap">
+    <ul className="space-y-4 text-nowrap w-full">
       {navItems.map((item) => (
         <AsideNavItem
-          key={item.label}
+          key={item.path}
           label={item.label}
           icon={item.icon}
-          isActive={pathNameCurrent === item.path}
-          onClick={() => {
-            // setActiveItem(item.label); 
-            router.push(item.path); 
-          }}
+          isActive={currentPath.startsWith(item.path)}
+          onClick={() => router.push(item.path)}
         />
       ))}
     </ul>

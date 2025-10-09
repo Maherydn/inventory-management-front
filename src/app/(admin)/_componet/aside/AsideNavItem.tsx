@@ -13,7 +13,7 @@ const AsideNavItem: React.FC<AsideNavItemProps> = ({ icon, label, isActive, onCl
   return (
     <li
       onClick={onClick}
-      className={`h-8 w-fit flex space-x-4 items-center cursor-pointer hover:text-blue-500 group ${colorClass}`}
+      className={`h-8 w-fit flex space-x-5 items-center cursor-pointer hover:text-blue-500 group ${colorClass}`}
     >
       <div className="size-5 text-inherit">
         {icon}

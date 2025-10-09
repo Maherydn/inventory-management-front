@@ -1,75 +1,24 @@
-import React from "react";
+"use client";
 
-// Définition du type pour un fournisseur
-type Supplier = {
-  supplierName: string;
-  product: string;
-  contactNumber: string;
-  email: string;
-  type: string;
-  onTheWay: boolean;
-};
+import React, { useEffect, useState } from "react";
+import { supplierData, SupplierType } from "../../data";
 
 const SuppliersTable: React.FC = () => {
+  const [data, setData] = useState<SupplierType[]>([]);
   const headers = [
     "Supplier Name",
-    "Product",
+    "Company Name",
     "Contact Number",
     "Email",
-    "Type",
-    "On the way",
+    "Localisation",
   ];
 
-  const data: Supplier[] = [
-    {
-      supplierName: "Global Distributors",
-      product: "Surf Excel",
-      contactNumber: "9876543210",
-      email: "contact@globaldist.com",
-      type: "Regular",
-      onTheWay: true,
-    },
-    {
-      supplierName: "FreshFarm Ltd.",
-      product: "Rin",
-      contactNumber: "8765432109",
-      email: "support@freshfarm.com",
-      type: "Wholesale",
-      onTheWay: false,
-    },
-    {
-      supplierName: "Sunrise Traders",
-      product: "Parle G",
-      contactNumber: "7654321098",
-      email: "info@sunrisetraders.com",
-      type: "Local",
-      onTheWay: true,
-    },
-    {
-      supplierName: "Global Distributors",
-      product: "Tide",
-      contactNumber: "9876543210",
-      email: "contact@globaldist.com",
-      type: "Regular",
-      onTheWay: false,
-    },
-    {
-      supplierName: "FreshFarm Ltd.",
-      product: "Lux",
-      contactNumber: "8765432109",
-      email: "support@freshfarm.com",
-      type: "Wholesale",
-      onTheWay: true,
-    },
-    {
-      supplierName: "Sunrise Traders",
-      product: "Good Day",
-      contactNumber: "7654321098",
-      email: "info@sunrisetraders.com",
-      type: "Local",
-      onTheWay: false,
-    },
-  ];
+  useEffect(() => {
+    // Ici tu peux remplacer par un fetch depuis ton API
+    setData(supplierData);
+  }, []);
+
+  if (!data.length) return <p>Loading...</p>;
 
   return (
     <table className="table-auto w-full p-2">
@@ -84,21 +33,12 @@ const SuppliersTable: React.FC = () => {
       </thead>
       <tbody className="text-gray-700">
         {data.map((supplier, index) => (
-          <tr key={index} className="hover:bg-gray-50 h-14 border-t">
+          <tr key={index} className="hover:bg-gray-50 h-14 border-t cursor-pointer">
             <td className="px-4 py-3 font-semibold">{supplier.supplierName}</td>
-            <td className="px-4 py-3">{supplier.product}</td>
+            <td className="px-4 py-3">{supplier.companyName}</td>
             <td className="px-4 py-3">{supplier.contactNumber}</td>
             <td className="px-4 py-3">{supplier.email}</td>
-            <td className="px-4 py-3">{supplier.type}</td>
-            <td className="px-4 py-3">
-              <span
-                className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                  supplier.onTheWay ? "text-green-500" : "text-red-500"
-                }`}
-              >
-                {supplier.onTheWay ? "Yes" : "No"}
-              </span>
-            </td>
+            <td className="px-4 py-3">{supplier.localisation}</td>
           </tr>
         ))}
       </tbody>

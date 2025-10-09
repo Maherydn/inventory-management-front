@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="h-screen w-screen flex overflow-hidden ">
+    <main className="h-screen  min-w-7xl max-w-7xl flex overflow-hidden ">
       <Aside />
       <div className=" h-full flex-1 flex flex-col gap-px   ">
         <Header />

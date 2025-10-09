@@ -1,34 +1,25 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import LowQualityStockItem from "./LowQualityStockItem";
+import { LowStockItems, LowStockItemType } from "../../data";
 
-const stockItems = [
-  {
-    id: 1,
-    name: "Lays",
-    quantity: 15,
-    status: "Low",
-    image: "/image/chips.png",
-  },
-  {
-    id: 2,
-    name: "Lays",
-    quantity: 15,
-    status: "Low",
-    image: "/image/chips.png",
-  },
-  {
-    id: 3,
-    name: "Lays",
-    quantity: 15,
-    status: "Low",
-    image: "/image/chips.png",
-  },
-];
+const LowQualityStockTable: React.FC = () => {
+  const [items, setItems] = useState<LowStockItemType[]>([]);
 
-const LowQualityStockTable = () => {
+  useEffect(() => {
+    const fetchItems = async () => {
+      setItems(LowStockItems);
+    };
+
+    fetchItems();
+  }, []);
+
+  if (!items.length) return <p>Loading...</p>;
+
   return (
     <div className="w-full">
-      {stockItems.map((item) => (
+      {items.map((item) => (
         <LowQualityStockItem
           key={item.id}
           image={item.image}

@@ -1,15 +1,23 @@
-import React from "react";
+"use client";
 
-const SellingStockTable = () => {
+import React, { useEffect, useState } from "react";
+import { sellingStockData, SellingStockType } from "../../data";
+const SellingStockTable: React.FC = () => {
+  const [products, setProducts] = useState<SellingStockType[]>([]);
   const headers = ["name", "sold quantity", "remaining quantity", "price"];
-  const data = [
-    { name: "Surf Excel", quantity: 30, sold: 12, price: 100 },
-    { name: "Rin", quantity: 21, sold: 15, price: 207 },
-    { name: "Parle G", quantity: 19, sold: 17, price: 105 },
-  ];
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setProducts(sellingStockData);
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (!products.length) return <p>Loading...</p>;
 
   return (
-    <table className="table-auto w-full  ">
+    <table className="table-auto w-full">
       <thead className="bg-gray-100/75 text-gray-600 uppercase text-sm">
         <tr>
           {headers.map((header, index) => (
@@ -20,9 +28,11 @@ const SellingStockTable = () => {
         </tr>
       </thead>
       <tbody className="text-gray-500/80">
-        {data.map((product, index) => (
+        {products.map((product, index) => (
           <tr key={index} className="hover:bg-gray-50 h-14">
-            <td className="px-4 py-3 border-t font-semibold text-gray-500">{product.name}</td>
+            <td className="px-4 py-3 border-t font-semibold text-gray-500">
+              {product.name}
+            </td>
             <td className="px-4 py-3 border-t">{product.quantity}</td>
             <td className="px-4 py-3 border-t">{product.sold}</td>
             <td className="px-4 py-3 border-t">₹ {product.price}</td>

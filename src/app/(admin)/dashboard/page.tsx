@@ -11,7 +11,7 @@ import LowQualityStoc from "./_components/lowQaulityStock/LowQualityStoc";
 
 const Page = () => {
   return (
-    <section className="h-full min-w-6xl xl:overflow-y-scroll py-6">
+    <section className="h-full w-full xl:overflow-y-scroll py-6">
       <div className="flex flex-col gap-4 px-6">
         <div className="h-44 w-full flex gap-4">
           <SalesOverview />

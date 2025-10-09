@@ -1,19 +1,30 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
-import React from "react";
-
-// Définition du type pour un produit
-type Product = {
-  name: string;
-  buyPrice: number;
-  quantity: number;
-  threshold: number;
-  expiryDate: string;
-  available: boolean;
-};
+import React, { useEffect, useState } from "react";
+import { productData, ProductDataType } from "../../data"; // 🔹 Assure-toi que productData et product existent
 
 const ProductsTable: React.FC = () => {
+  const [data, setData] = useState<ProductDataType[] | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      // 🔹 Ici tu pourrais remplacer par un vrai fetch :
+      // const res = await fetch("/api/products");
+      // const dataFromBack = await res.json();
+      setData(productData); // Fake data pour l'instant
+    };
+
+    fetchProducts();
+  }, []);
+
+  const goToInventory = (slug: string) => {
+    router.push(`/inventory/${slug}`);
+  };
+
+  if (!data) return <p>Loading...</p>;
+
   const headers = [
     "Product",
     "Buy Price",
@@ -22,63 +33,6 @@ const ProductsTable: React.FC = () => {
     "Expiry Date",
     "Availability",
   ];
-
-  const data: Product[] = [
-    {
-      name: "Surf Excel",
-      buyPrice: 100,
-      quantity: 30,
-      threshold: 10,
-      expiryDate: "2025-08-01",
-      available: true,
-    },
-    {
-      name: "Rin",
-      buyPrice: 207,
-      quantity: 21,
-      threshold: 8,
-      expiryDate: "2024-12-15",
-      available: true,
-    },
-    {
-      name: "Parle G",
-      buyPrice: 105,
-      quantity: 19,
-      threshold: 12,
-      expiryDate: "2024-10-01",
-      available: false,
-    },
-    {
-      name: "Surf Excel",
-      buyPrice: 100,
-      quantity: 30,
-      threshold: 10,
-      expiryDate: "2025-08-01",
-      available: true,
-    },
-    {
-      name: "Rin",
-      buyPrice: 207,
-      quantity: 21,
-      threshold: 8,
-      expiryDate: "2024-12-15",
-      available: true,
-    },
-    {
-      name: "Parle G",
-      buyPrice: 105,
-      quantity: 19,
-      threshold: 12,
-      expiryDate: "2024-10-01",
-      available: false,
-    },
-  ];
-
-  const router = useRouter();
-
-  const goToInventory = () => {
-    router.push(`/inventory/slug`);
-  };
 
   return (
     <table className="table-auto w-full p-2">
@@ -92,21 +46,21 @@ const ProductsTable: React.FC = () => {
         </tr>
       </thead>
       <tbody className="text-gray-500">
-        {data.map((product, index) => (
+        {data.map((product) => (
           <tr
-            key={index}
-            className="hover:bg-gray-50 h-14 border-t cursor-pointer "
-            onClick={() => goToInventory()}
+            key={product.id}
+            className="hover:bg-gray-50 h-14 border-t cursor-pointer"
+            onClick={() => goToInventory(product.slug)}
           >
             <td className="px-4 py-3 font-semibold">{product.name}</td>
-            <td className="px-4 py-3 ">₹ {product.buyPrice}</td>
-            <td className="px-4 py-3 ">{product.quantity}</td>
-            <td className="px-4 py-3 ">{product.threshold}</td>
-            <td className="px-4 py-3 ">{product.expiryDate}</td>
-            <td className="px-4 py-3 ">
+            <td className="px-4 py-3">₹ {product.buyPrice}</td>
+            <td className="px-4 py-3">{product.quantity}</td>
+            <td className="px-4 py-3">{product.threshold}</td>
+            <td className="px-4 py-3">{product.expiryDate}</td>
+            <td className="px-4 py-3">
               <span
                 className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                  product.available ? " text-green-500" : " text-red-500"
+                  product.available ? "text-green-500" : "text-red-500"
                 }`}
               >
                 {product.available ? "Available" : "Out of Stock"}

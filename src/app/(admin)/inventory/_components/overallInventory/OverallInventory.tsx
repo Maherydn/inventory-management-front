@@ -1,7 +1,23 @@
-import React from "react";
-import OverallInventoryItem from "./OverallInventoryItem";
+"use client";
 
-const OverallInventory = () => {
+import React, { useEffect, useState } from "react";
+import OverallInventoryItem from "./OverallInventoryItem";
+import { OverallInventoryData, OverallInventoryDataType } from "../../data";
+
+const OverallInventory: React.FC = () => {
+  const [data, setData] = useState<OverallInventoryDataType | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // 🔹 FakeData temporaire (remplacer par fetch réel)
+
+      setData(OverallInventoryData);
+    };
+    fetchData();
+  }, []);
+
+  if (!data) return <p>Loading...</p>;
+
   return (
     <div className="bg-white rounded-xl p-2 space-y-4 shadow-md">
       <h3 className="capitalize h-18 flex items-center text-xl font-semibold text-gray-600 p-4">
@@ -12,15 +28,15 @@ const OverallInventory = () => {
           color="text-blue-400/90"
           isCategory
           title="Categories"
-          quantity={12}
+          quantity={data.categories.quantity}
         />
 
         <div className="h-24 w-px bg-slate-300"></div>
         <OverallInventoryItem
           color="text-orange-400/90"
           title="Total Products"
-          quantity={12}
-          price={25000}
+          quantity={data.totalProducts.quantity}
+          price={data.totalProducts.price}
           type="Revenue"
         />
 
@@ -28,8 +44,8 @@ const OverallInventory = () => {
         <OverallInventoryItem
           color="text-violet-400/90"
           title="Top Selling"
-          quantity={5}
-          price={2500}
+          quantity={data.topSelling.quantity}
+          price={data.topSelling.price}
           type="Cost"
         />
 
@@ -37,8 +53,8 @@ const OverallInventory = () => {
         <OverallInventoryItem
           color="text-red-400/90"
           title="Low Stocks"
-          quantity={12}
-          price={2}
+          quantity={data.lowStocks.quantity}
+          price={data.lowStocks.price}
           type="Not In stock"
           isLowStock
         />
